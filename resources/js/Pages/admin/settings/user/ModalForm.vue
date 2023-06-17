@@ -133,6 +133,7 @@ const create = async () => {
             <div class="grid grid-cols-2 gap-3">
                 <VInput placeholder="Insert Name" label="Name" :required="true" v-model="form.name"
                     :errorMessage="formError.name" @update:modelValue="formError.name = ''" />
+                    
                 <VInput placeholder="Insert Email" label="Email" :required="true" v-model="form.email"
                     :errorMessage="formError.email" @update:modelValue="formError.email = ''"
                     type="email" />

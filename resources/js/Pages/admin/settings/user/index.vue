@@ -139,7 +139,11 @@ const closeAlert = () => {
 };
 const deleteHandle = async () => {
     axios
-        .delete(route("settings.user.delete", { id: itemSelected.value.id }))
+        .delete(
+            route("settings.user.delete", {
+                id: itemSelected.value.id,
+            })
+        )
         .then((res) => {
             notify(
                 {
@@ -247,8 +251,10 @@ onMounted(() => {
                             </div>
                         </li>
                         <li class="cursor-pointer hover:bg-slate-100">
-                            <div class="flex justify-between items-center space-x-2 p-3"
-                                @click="alertDelete(data)">
+                            <div
+                                class="flex justify-between items-center space-x-2 p-3"
+                                @click="alertDelete(data)"
+                            >
                                 <span>
                                     <VTrash color="danger" />
                                 </span>

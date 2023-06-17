@@ -33,7 +33,23 @@ class UserManagementService
         return $user;
     }
 
-    public function deleteData($id){
+    public function updateData($request, $id)
+    {
+        $user = User::findOrFail($id);
+        $inputs = $request->only(['name', 'email']);
+        $inputs['password'] = Hash::make($request->password); // hash password
+
+        $user->update($inputs);
+
+        // // Assign role after create user
+        // $role = Role::findOrFail($request->role_id);
+        // $user->assignRole($role->name);
+
+        return $user;
+    }
+
+    public function deleteData($id)
+    {
         $user = User::findOrFail($id);
 
         $user->delete();
