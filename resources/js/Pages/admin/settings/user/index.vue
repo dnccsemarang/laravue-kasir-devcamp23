@@ -229,7 +229,7 @@ onMounted(() => {
                 <td class="px-4 whitespace-nowrap h-16 capitalize">
                     {{ data.role }}
                 </td>
-                <!-- <td class="px-4 whitespace-nowrap h-16 text-right">
+                <td class="px-4 whitespace-nowrap h-16 text-right">
                     <VDropdownEditMenu
                         class="relative inline-flex r-0"
                         :align="'right'"
@@ -247,10 +247,8 @@ onMounted(() => {
                             </div>
                         </li>
                         <li class="cursor-pointer hover:bg-slate-100">
-                            <div
-                                class="flex justify-between items-center space-x-2 p-3"
-                                @click="alertDelete(data)"
-                            >
+                            <div class="flex justify-between items-center space-x-2 p-3"
+                                @click="alertDelete(data)">
                                 <span>
                                     <VTrash color="danger" />
                                 </span>
@@ -258,7 +256,7 @@ onMounted(() => {
                             </div>
                         </li>
                     </VDropdownEditMenu>
-                </td> -->
+                </td>
             </tr>
         </VDataTable>
         <div class="px-4 py-6">

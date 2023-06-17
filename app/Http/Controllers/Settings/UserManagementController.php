@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Settings\User\CreateUserRequest;
 use App\Http\Resources\Settings\User\SubmitUserResource;
 use App\Http\Resources\Settings\User\UserListResource;
+use App\Models\User;
 use App\Services\Settings\User\UserManagementService;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -50,6 +51,19 @@ class UserManagementController extends Controller
             $result = new SubmitUserResource($data, 'User berhasil ditambahkan');
 
             return $this->respond($result);
+        } catch (\Exception $e) {
+            return $this->exceptionError($e->getMessage());
+        }
+    }
+
+    public function delete($id)
+    {
+        try {
+            $data = $this->userManagementService->deleteData($id);
+            $result = new SubmitUserResource($data, 'User berhasil dihapus');
+            
+            return $this->respond($result);
+
         } catch (\Exception $e) {
             return $this->exceptionError($e->getMessage());
         }

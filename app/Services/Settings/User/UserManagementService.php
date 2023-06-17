@@ -32,4 +32,12 @@ class UserManagementService
 
         return $user;
     }
+
+    public function deleteData($id){
+        $user = User::findOrFail($id);
+
+        $user->delete();
+
+        return $user;
+    }
 }
