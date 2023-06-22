@@ -13,7 +13,12 @@ class GetSidebarMenuActions
                 'icon' => 'VDashboard',
                 // 'can'  => 'view_general_dashboard'
             ],
-
+            [
+                'text' => 'Category',
+                'url'  => route('category.index'),
+                'icon' => 'VTag',
+                'can'  => ''
+            ],
             [
                 'text' => 'Settings',
                 'icon' => 'VSetting',
